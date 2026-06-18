@@ -1,0 +1,46 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.ApprovalApp" parent="Theme.Material3.DayNight.NoActionBar">
+    </style>
+
+    <style name="Theme.ApprovalApp" parent="Theme.Material3.Light.NoActionBar">
+
+        <!-- Status bar -->
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/navy_dark</item>
+
+        <!-- Backgrounds -->
+        <item name="android:windowBackground">@color/light_bg</item>
+        <item name="colorSurface">@color/light_surface</item>
+        <item name="android:colorBackground">@color/light_bg</item>
+
+        <!-- Primary = navy -->
+        <item name="colorPrimary">@color/navy_dark</item>
+        <item name="colorPrimaryVariant">@color/navy_mid</item>
+        <item name="colorOnPrimary">@color/text_white</item>
+
+        <!-- Secondary = red -->
+        <item name="colorSecondary">@color/accent_red</item>
+        <item name="colorOnSecondary">@color/text_white</item>
+
+        <!-- Text -->
+        <item name="android:textColorPrimary">@color/text_on_light_primary</item>
+        <item name="android:textColorSecondary">@color/text_on_light_secondary</item>
+
+        <!-- Switch tint -->
+        <item name="colorControlActivated">@color/navy_dark</item>
+        <item name="colorControlNormal">@color/accent_grey</item>
+
+        <!-- Ripple -->
+        <item name="colorControlHighlight">#1A0D2B5E</item>
+
+    </style>
+
+    <!-- Transparent dialog window background -->
+    <style name="TransparentDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+</resources>

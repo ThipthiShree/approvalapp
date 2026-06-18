@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "682101739601",
+    "project_id": "approvalapp-a8007",
+    "storage_bucket": "approvalapp-a8007.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:682101739601:android:fce73c0dc88a36b48d6870",
+        "android_client_info": {
+          "package_name": "com.example.approvalapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJhe83tOOrxgWGI_yPr4XgcCL-i8lkb0k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

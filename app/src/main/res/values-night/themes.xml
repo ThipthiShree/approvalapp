@@ -1,0 +1,37 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.ApprovalApp" parent="Theme.Material3.Dark.NoActionBar">
+
+        <!-- Status bar -->
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/navy_dark</item>
+
+        <!-- Backgrounds -->
+        <item name="android:windowBackground">@color/bg_dark</item>
+        <item name="colorSurface">@color/navy_card</item>
+        <item name="android:colorBackground">@color/bg_dark</item>
+
+        <!-- Primary = dark navy -->
+        <item name="colorPrimary">@color/navy_dark</item>
+        <item name="colorPrimaryVariant">@color/navy_deep</item>
+        <item name="colorOnPrimary">@color/text_white</item>
+
+        <!-- Secondary = red -->
+        <item name="colorSecondary">@color/accent_red</item>
+        <item name="colorOnSecondary">@color/text_white</item>
+
+        <!-- Text -->
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+
+        <!-- Switch tint -->
+        <item name="colorControlActivated">@color/blue_glow</item>
+        <item name="colorControlNormal">@color/accent_grey</item>
+
+        <!-- Ripple -->
+        <item name="colorControlHighlight">#2200BFFF</item>
+
+    </style>
+
+</resources>

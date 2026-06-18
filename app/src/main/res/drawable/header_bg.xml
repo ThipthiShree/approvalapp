@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base navy gradient -->
+    <item>
+        <shape>
+            <gradient
+                android:startColor="#0B1D2C"
+                android:endColor="#0B2A45"
+                android:angle="135" />
+        </shape>
+    </item>
+
+    <!-- Red accent strip on left edge -->
+    <item android:width="4dp" android:gravity="start">
+        <shape>
+            <solid android:color="#D92B4C" />
+        </shape>
+    </item>
+
+</layer-list>

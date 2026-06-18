@@ -1,0 +1,1097 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- TOPBAR -->
+        <LinearLayout
+            android:id="@+id/hamburgerButton"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:background="#0D2B5E"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Open navigation menu">
+
+            <LinearLayout
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#1A4080"
+                android:padding="7dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#FFFFFF" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#FFFFFF" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#FFFFFF" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/topBarTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="14dp"
+                android:text="Home"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- LOCATION + DATE BOX -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="10dp"
+                android:background="#1A4080"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📍"
+                        android:textSize="10sp"
+                        android:layout_marginEnd="3dp" />
+
+                    <TextView
+                        android:id="@+id/tvLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Locating..."
+                        android:textColor="#FFFFFF"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:maxLines="1"
+                        android:maxWidth="90dp"
+                        android:ellipsize="end" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvTodayDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#8AB4D4"
+                    android:textSize="9sp"
+                    android:maxLines="1" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/profileIconContainer"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/profile_icon_bg">
+
+                <TextView
+                    android:id="@+id/tvProfileInitial"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="A"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+        </LinearLayout>
+        <!-- TOPBAR CLOSED -->
+
+        <!-- PAGE AREA + OVERLAYS -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <!-- PAGE CONTENT -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- HOME PAGE -->
+                <LinearLayout
+                    android:id="@+id/homeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#0D2B5E"
+                    android:orientation="vertical">
+
+                    <!-- Center content wrapper -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:src="@drawable/cl" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Welcome to Approval App"
+                            android:textColor="#FFFFFF"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Tap ☰ to navigate"
+                            android:textColor="#8AB4D4"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <!-- FOOTER pinned at bottom -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#0A1F4D"
+                        android:gravity="center"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:text="2026 © ApprovalApp by Thipthi"
+                        android:textColor="#4A6A9A"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+                <!-- APPROVAL PAGE -->
+                <ScrollView
+                    android:id="@+id/approvalContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/bg_dark"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="0dp">
+
+                        <!-- Header decoration -->
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#0D2B5E" />
+
+                            <ImageView
+                                android:id="@+id/rotatingRingOuter"
+                                android:layout_width="220dp"
+                                android:layout_height="220dp"
+                                android:layout_gravity="end|center_vertical"
+                                android:layout_marginEnd="-60dp"
+                                android:alpha="0.18"
+                                android:src="@drawable/ic_ring_outer" />
+
+                            <ImageView
+                                android:id="@+id/rotatingRingInner"
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                android:layout_gravity="end|center_vertical"
+                                android:layout_marginEnd="-10dp"
+                                android:alpha="0.22"
+                                android:src="@drawable/ic_ring_inner" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical"
+                                android:paddingTop="20dp">
+
+                                <ImageView
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/cl" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Request Approval"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tickerText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:singleLine="true"
+                                    android:scrollHorizontally="true"
+                                    android:ellipsize="none"
+                                    android:text=""
+                                    android:textColor="#8AB4D4"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </FrameLayout>
+                        <!-- Header decoration ends here — footer NOT inside it -->
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="#FFFFFF" />
+
+                        <!-- SEARCH REQUEST PANEL -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginTop="12dp"
+                            android:background="@drawable/card_bg"
+                            android:elevation="8dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/section_header_bg"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:padding="14dp">
+
+                                <View
+                                    android:layout_width="4dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="#1DB8A8" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Search Request"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Request No"
+                                    android:textColor="#8AB4D4"
+                                    android:textSize="12sp"
+                                    android:layout_marginBottom="6dp" />
+
+                                <EditText
+                                    android:id="@+id/searchRequestNo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="44dp"
+                                    android:background="@drawable/search_input_bg"
+                                    android:textColorHint="#4A5A7A"
+                                    android:inputType="text"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="13sp"
+                                    android:layout_marginBottom="14dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Type"
+                                    android:textColor="#8AB4D4"
+                                    android:textSize="12sp"
+                                    android:layout_marginBottom="6dp" />
+
+                                <Spinner
+                                    android:id="@+id/searchType"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="44dp"
+                                    android:background="@drawable/search_input_bg"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp"
+                                    android:layout_marginBottom="14dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Status"
+                                    android:textColor="#8AB4D4"
+                                    android:textSize="12sp"
+                                    android:layout_marginBottom="6dp" />
+
+                                <Spinner
+                                    android:id="@+id/searchStatus"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="44dp"
+                                    android:background="@drawable/search_input_bg"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp"
+                                    android:layout_marginBottom="4dp" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- QUOTATION SECTION -->
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/card_bg"
+                                android:elevation="8dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:id="@+id/quotationHeader"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/section_header_bg"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="14dp">
+
+                                    <TextView
+                                        android:layout_width="32dp"
+                                        android:layout_height="32dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/section_icon_bg"
+                                        android:gravity="center"
+                                        android:text="Q"
+                                        android:textColor="@color/blue_glow"
+                                        android:textSize="14sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="Quotation Details"
+                                        android:textColor="@color/text_primary"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/quotationCount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/count_pill_bg"
+                                        android:paddingStart="10dp"
+                                        android:paddingTop="3dp"
+                                        android:paddingEnd="10dp"
+                                        android:paddingBottom="3dp"
+                                        android:text="0"
+                                        android:textColor="@color/blue_glow"
+                                        android:textSize="11sp"
+                                        android:textStyle="bold" />
+
+                                    <ImageButton
+                                        android:id="@+id/quotationChevron"
+                                        android:layout_width="32dp"
+                                        android:layout_height="32dp"
+                                        android:background="@android:color/transparent"
+                                        android:src="@android:drawable/arrow_down_float"
+                                        app:tint="@color/blue_glow" />
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/divider" />
+
+                                <HorizontalScrollView
+                                    android:id="@+id/quotationTableContainer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
+
+                                    <LinearLayout
+                                        android:id="@+id/quotationInnerTable"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="@color/table_header_bg"
+                                            android:orientation="horizontal">
+
+                                            <TextView style="@style/TableHeader" android:width="60dp"  android:text="S.No" />
+                                            <TextView style="@style/TableHeader" android:width="130dp" android:text="Request No" />
+                                            <TextView style="@style/TableHeader" android:width="130dp" android:text="Quote Owner" />
+                                            <TextView style="@style/TableHeader" android:width="140dp" android:text="Account Name" />
+                                            <TextView style="@style/TableHeader" android:width="160dp" android:text="Opportunity" />
+                                            <TextView style="@style/TableHeader" android:width="150dp" android:text="Payment Term" />
+                                            <TextView style="@style/TableHeader" android:width="110dp" android:text="Currency" />
+                                            <TextView style="@style/TableHeader" android:width="110dp" android:text="Total" />
+                                            <TextView style="@style/TableHeader" android:width="120dp" android:text="Action By" />
+                                            <TextView style="@style/TableHeader" android:width="120dp" android:text="Actions" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                </HorizontalScrollView>
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <!-- SALES ORDER SECTION -->
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/card_bg"
+                                android:elevation="8dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:id="@+id/salesHeader"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/section_header_bg"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="14dp">
+
+                                    <TextView
+                                        android:layout_width="32dp"
+                                        android:layout_height="32dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/section_icon_bg"
+                                        android:gravity="center"
+                                        android:text="S"
+                                        android:textColor="@color/blue_glow"
+                                        android:textSize="14sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="Sales Order Details"
+                                        android:textColor="@color/text_primary"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/salesCount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/count_pill_bg"
+                                        android:paddingStart="10dp"
+                                        android:paddingTop="3dp"
+                                        android:paddingEnd="10dp"
+                                        android:paddingBottom="3dp"
+                                        android:text="0"
+                                        android:textColor="@color/blue_glow"
+                                        android:textSize="11sp"
+                                        android:textStyle="bold" />
+
+                                    <ImageButton
+                                        android:id="@+id/salesChevron"
+                                        android:layout_width="32dp"
+                                        android:layout_height="32dp"
+                                        android:background="@android:color/transparent"
+                                        android:src="@android:drawable/arrow_down_float"
+                                        app:tint="@color/blue_glow" />
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/divider" />
+
+                                <HorizontalScrollView
+                                    android:id="@+id/salesTableContainer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
+
+                                    <LinearLayout
+                                        android:id="@+id/salesInnerTable"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="@color/table_header_bg"
+                                            android:orientation="horizontal">
+
+                                            <TextView style="@style/TableHeader" android:width="60dp"  android:text="S.No" />
+                                            <TextView style="@style/TableHeader" android:width="130dp" android:text="Request No" />
+                                            <TextView style="@style/TableHeader" android:width="130dp" android:text="Quote Owner" />
+                                            <TextView style="@style/TableHeader" android:width="150dp" android:text="Quote Name" />
+                                            <TextView style="@style/TableHeader" android:width="170dp" android:text="Payment Terms" />
+                                            <TextView style="@style/TableHeader" android:width="110dp" android:text="Total" />
+                                            <TextView style="@style/TableHeader" android:width="130dp" android:text="Assigned To" />
+                                            <TextView style="@style/TableHeader" android:width="120dp" android:text="Action By" />
+                                            <TextView style="@style/TableHeader" android:width="120dp" android:text="Actions" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                </HorizontalScrollView>
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <!-- HISTORY TABLE (shown only for Approved/Rejected) -->
+                        <FrameLayout
+                            android:id="@+id/historySection"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="12dp"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/card_bg"
+                                android:elevation="8dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/section_header_bg"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:padding="14dp">
+
+                                    <TextView
+                                        android:layout_width="32dp"
+                                        android:layout_height="32dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/section_icon_bg"
+                                        android:gravity="center"
+                                        android:text="H"
+                                        android:textColor="@color/blue_glow"
+                                        android:textSize="14sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/historyTitle"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="Approval History"
+                                        android:textColor="@color/text_primary"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/historyCount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/count_pill_bg"
+                                        android:paddingStart="10dp"
+                                        android:paddingTop="3dp"
+                                        android:paddingEnd="10dp"
+                                        android:paddingBottom="3dp"
+                                        android:text="0"
+                                        android:textColor="@color/blue_glow"
+                                        android:textSize="11sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/divider" />
+
+                                <HorizontalScrollView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:id="@+id/historyInnerTable"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:id="@+id/historyTableHeader"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="@color/table_header_bg"
+                                            android:orientation="horizontal">
+
+                                            <TextView style="@style/TableHeader" android:width="60dp"  android:text="S.No" />
+                                            <TextView style="@style/TableHeader" android:width="150dp" android:text="Request No" />
+                                            <TextView style="@style/TableHeader" android:width="100dp" android:text="Type" />
+                                            <TextView style="@style/TableHeader" android:width="130dp" android:text="Quote Owner" />
+                                            <TextView style="@style/TableHeader" android:width="150dp" android:text="Account / Quote" />
+                                            <TextView style="@style/TableHeader" android:width="110dp" android:text="Currency" />
+                                            <TextView style="@style/TableHeader" android:width="110dp" android:text="Total" />
+                                            <TextView style="@style/TableHeader" android:width="120dp" android:text="Action By" />
+                                            <TextView style="@style/TableHeader" android:width="120dp" android:text="Status" />
+                                            <TextView style="@style/TableHeader" android:width="180dp" android:text="Timestamp" />
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+                                </HorizontalScrollView>
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <!-- FOOTER at bottom of approval scroll -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#0A1F4D"
+                            android:gravity="center"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="12dp"
+                            android:text="2026 © ApprovalApp by Thipthi"
+                            android:textColor="#4A6A9A"
+                            android:textSize="11sp" />
+
+                    </LinearLayout>
+                </ScrollView>
+
+            </FrameLayout>
+            <!-- end inner page FrameLayout -->
+
+            <!-- TRANSPARENT DISMISS OVERLAY -->
+            <View
+                android:id="@+id/overlayDismiss"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#66000000"
+                android:visibility="gone" />
+
+            <!-- PROFILE DROPDOWN MENU -->
+            <LinearLayout
+                android:id="@+id/profileDropdown"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/dropdown_bg"
+                android:elevation="12dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#2A3A5E"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="14dp">
+
+                    <FrameLayout
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:background="@drawable/profile_icon_bg"
+                        android:layout_marginEnd="12dp">
+
+                        <TextView
+                            android:id="@+id/tvDropdownInitial"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="A"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/tvMenuUsername"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Username"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#3A4A6A" />
+
+                <LinearLayout
+                    android:id="@+id/menuItemSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Settings"
+                        android:textColor="#C8D8F0"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#3A4A6A" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" />
+
+                <LinearLayout
+                    android:id="@+id/menuItemPrint"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Print"
+                        android:textColor="#C8D8F0"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#3A4A6A" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" />
+
+                <LinearLayout
+                    android:id="@+id/menuItemChangePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Change Password"
+                        android:textColor="#C8D8F0"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#3A4A6A" />
+
+                <LinearLayout
+                    android:id="@+id/menuItemLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Logout"
+                        android:textColor="#E05C5C"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <!-- end profile dropdown -->
+
+        </FrameLayout>
+        <!-- end page area FrameLayout -->
+
+    </LinearLayout>
+    <!-- end main content LinearLayout -->
+
+    <!-- ===== LEFT NAVIGATION DRAWER ===== -->
+    <LinearLayout
+        android:id="@+id/navigationDrawer"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#1A1A2E"
+        android:elevation="16dp"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="#0D2B5E"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingTop="24dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
+
+            <ImageView
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/cl"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Approval App"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#2A3A5A" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="16dp">
+
+                <!-- DASHBOARD (expandable) -->
+                <LinearLayout
+                    android:id="@+id/navDashboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <TextView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:gravity="center"
+                        android:text="➔"
+                        android:textColor="#8AB4D4"
+                        android:textSize="13sp"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="DashBoard"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/dashboardChevron"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@android:drawable/arrow_down_float"
+                        app:tint="#8AB4D4" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/dashboardSubMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/navHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="52dp"
+                        android:paddingEnd="16dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground">
+
+                        <View
+                            android:layout_width="6dp"
+                            android:layout_height="6dp"
+                            android:layout_marginEnd="12dp"
+                            android:background="#8AB4D4" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Home"
+                            android:textColor="#C8D8E8"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#2A3A5A"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp" />
+
+                <!-- REQUEST / APPROVAL (expandable) -->
+                <LinearLayout
+                    android:id="@+id/navRequest"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <TextView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:gravity="center"
+                        android:text="➔"
+                        android:textColor="#8AB4D4"
+                        android:textSize="13sp"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Approval"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/requestChevron"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@android:drawable/arrow_down_float"
+                        app:tint="#8AB4D4" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/navApprovalSubMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/navApproval"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="52dp"
+                        android:paddingEnd="16dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground">
+
+                        <View
+                            android:layout_width="6dp"
+                            android:layout_height="6dp"
+                            android:layout_marginEnd="12dp"
+                            android:background="#D92B4C" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Request Approval"
+                            android:textColor="#C8D8E8"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="3dp"
+                            android:layout_height="match_parent"
+                            android:background="#D92B4C" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#2A3A5A"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+    <!-- end navigation drawer -->
+
+</androidx.drawerlayout.widget.DrawerLayout>

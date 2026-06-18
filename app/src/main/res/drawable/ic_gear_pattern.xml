@@ -1,0 +1,70 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Large gear -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="
+        M85,20 L90,5 L110,5 L115,20
+        Q125,23 133,30 L148,22 L162,36 L154,51
+        Q159,60 161,70 L176,76 L176,96 L161,102
+        Q158,112 152,120 L160,135 L146,149 L131,141
+        Q122,146 112,148 L106,163 L86,163 L80,148
+        Q70,145 62,139 L47,147 L33,133 L41,118
+        Q36,109 34,99 L19,93 L19,73 L34,67
+        Q37,57 43,49 L35,34 L49,20 L64,28
+        Q73,23 83,21 Z"/>
+
+    <!-- Large gear hole -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#00000000"
+        android:pathData="M100,65 A35,35 0 1,0 100.1,65 Z"/>
+
+    <!-- Inner circle cutout for large gear -->
+    <group>
+        <clip-path android:pathData="M85,20 L90,5 L110,5 L115,20 Q125,23 133,30 L148,22 L162,36 L154,51 Q159,60 161,70 L176,76 L176,96 L161,102 Q158,112 152,120 L160,135 L146,149 L131,141 Q122,146 112,148 L106,163 L86,163 L80,148 Q70,145 62,139 L47,147 L33,133 L41,118 Q36,109 34,99 L19,93 L19,73 L34,67 Q37,57 43,49 L35,34 L49,20 L64,28 Q73,23 83,21 Z"/>
+    </group>
+
+    <!-- Small gear top-right -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="
+        M155,10 L157,3 L167,3 L169,10
+        Q173,11 177,14 L184,10 L191,17 L187,24
+        Q189,28 190,33 L197,36 L197,46 L190,49
+        Q189,54 186,58 L190,65 L183,72 L176,68
+        Q172,70 168,71 L165,78 L155,78 L152,71
+        Q148,70 144,67 L137,71 L130,64 L134,57
+        Q132,53 131,48 L124,45 L124,35 L131,32
+        Q132,27 135,23 L131,16 L138,9 L145,13
+        Q149,10 154,10 Z"/>
+
+    <!-- Small gear hole -->
+    <path
+        android:fillColor="#1A2030"
+        android:pathData="M161,28 A14,14 0 1,0 161.1,28 Z"/>
+
+    <!-- Tiny gear bottom-left -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="
+        M30,145 L31,140 L37,140 L38,145
+        Q41,146 43,148 L48,145 L52,149 L49,154
+        Q51,157 51,160 L56,162 L56,168 L51,170
+        Q50,173 48,175 L51,180 L47,184 L42,181
+        Q40,182 37,183 L35,188 L29,188 L27,183
+        Q24,182 22,180 L17,183 L13,179 L16,174
+        Q14,171 14,168 L9,166 L9,160 L14,158
+        Q15,155 17,153 L14,148 L18,144 L23,147
+        Q26,145 30,145 Z"/>
+
+    <!-- Tiny gear hole -->
+    <path
+        android:fillColor="#1A2030"
+        android:pathData="M33,158 A8,8 0 1,0 33.1,158 Z"/>
+
+</vector>
